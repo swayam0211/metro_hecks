@@ -185,7 +185,15 @@ function SecondaryScenarioCard({
               {paxFormatted}
             </p>
           </div>
-          <CircleButton variant="white" size="sm" aria-label="Open">
+          <CircleButton
+            variant="white"
+            size="sm"
+            aria-label="Open"
+            onClick={(e) => {
+              e.stopPropagation();
+              onSelect(event);
+            }}
+          >
             <ArrowUpRight size={13} className="text-gray-600" />
           </CircleButton>
         </div>
