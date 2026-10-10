@@ -1,0 +1,53 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Next.js build and static output
+/.next/
+/out/
+/dist/
+/build/
+
+# Environment files & credentials
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# Text & Documentation files (requested to ignore)
+*.txt
+*.md
+
+# Debug & Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Diagnostic & Coverage
+coverage/
+*.lcov
+.nyc_output
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Python / Manim cache and output
+__pycache__/
+*.py[cod]
+*$py.class
+media/

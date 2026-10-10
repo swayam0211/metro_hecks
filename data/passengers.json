@@ -1,0 +1,1202 @@
+[
+  {
+    "passengerId": "9536725b-3d36-4670-bbae-33bc20614285",
+    "name": "Smit Desai",
+    "frequentStation": "Sector 1 Gandhinagar",
+    "dailyRoute": {
+      "start": "GNLU",
+      "end": "Sector 1 Gandhinagar"
+    },
+    "travelTiming": "08:30 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "e5a1369e-1ae5-4501-926b-3e91c650e26b",
+    "name": "Ananya Patel",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "Ranip Interchange",
+      "end": "GIFT City"
+    },
+    "travelTiming": "17:30 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "84060666-5f75-468a-b11c-858075f9e996",
+    "name": "Ananya Gajjar",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "Ranip Interchange",
+      "end": "GIFT City"
+    },
+    "travelTiming": "18:15 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "9b2cb698-755f-4fb2-8319-a41e9551cbc5",
+    "name": "Harsh Vyas",
+    "frequentStation": "Motera Stadium",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "GIFT City"
+    },
+    "travelTiming": "18:00 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "2d56dc96-f9ed-4836-a484-03b3706b8a81",
+    "name": "Dharini Shah",
+    "frequentStation": "Mahatma Mandir",
+    "dailyRoute": {
+      "start": "Mahatma Mandir",
+      "end": "Koba Circle"
+    },
+    "travelTiming": "17:00 PM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "5df98560-010b-4f1b-a19d-b140694a254b",
+    "name": "Smit Soni",
+    "frequentStation": "Koba Circle",
+    "dailyRoute": {
+      "start": "Koba Circle",
+      "end": "Sector 1 Gandhinagar"
+    },
+    "travelTiming": "08:15 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "02c8abdc-dc30-433d-ad9a-15aacfa2810c",
+    "name": "Nikhil Soni",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "GIFT City"
+    },
+    "travelTiming": "13:45 PM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "e5b93a61-f345-4cb2-8d3f-577dbb923e3e",
+    "name": "Jhanvi Soni",
+    "frequentStation": "Ranip Interchange",
+    "dailyRoute": {
+      "start": "Ranip Interchange",
+      "end": "Infocity Gandhinagar"
+    },
+    "travelTiming": "20:00 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "7d78f10b-58e8-4f9c-a33c-aab5a45b4364",
+    "name": "Kavya Patel",
+    "frequentStation": "GNLU",
+    "dailyRoute": {
+      "start": "GNLU",
+      "end": "GIFT City"
+    },
+    "travelTiming": "08:15 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "72caf88d-e6cd-42ec-9a48-64e53d08f3ac",
+    "name": "Aarav Mehta",
+    "frequentStation": "Sabarmati Railway Station",
+    "dailyRoute": {
+      "start": "Ranip Interchange",
+      "end": "Sabarmati Railway Station"
+    },
+    "travelTiming": "11:15 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "20347af7-03b6-431e-aac9-2ce41946bdb3",
+    "name": "Jhanvi Panchal",
+    "frequentStation": "Ranip Interchange",
+    "dailyRoute": {
+      "start": "Ranip Interchange",
+      "end": "Koba Circle"
+    },
+    "travelTiming": "11:15 AM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "cdd4a94d-9729-48d0-9b51-1245ea355923",
+    "name": "Aditya Desai",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "GIFT City",
+      "end": "Motera Stadium"
+    },
+    "travelTiming": "13:45 PM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "6f0dba27-6caf-41c9-9ca5-fa794491c6d9",
+    "name": "Sneha Soni",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "Thaltej Gam",
+      "end": "GIFT City"
+    },
+    "travelTiming": "13:45 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "3e8911be-fe41-4880-a756-a5ee848e447a",
+    "name": "Aastha Shah",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "Sector 1 Gandhinagar",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "18:45 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "2f6ea4aa-1901-4e95-a1d6-9e6420771a73",
+    "name": "Riddhi Panchal",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "Koba Circle",
+      "end": "GIFT City"
+    },
+    "travelTiming": "21:15 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "56ac216f-6b89-412d-bf3b-048730878e66",
+    "name": "Harsh Vyas",
+    "frequentStation": "Koba Circle",
+    "dailyRoute": {
+      "start": "Koba Circle",
+      "end": "Mahatma Mandir"
+    },
+    "travelTiming": "17:30 PM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "8f7830e5-b86f-4217-bc64-303e83f434fa",
+    "name": "Riddhi Zala",
+    "frequentStation": "GNLU",
+    "dailyRoute": {
+      "start": "Thaltej Gam",
+      "end": "GNLU"
+    },
+    "travelTiming": "19:15 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "a72e52b7-978b-4146-8746-d3629ba18c29",
+    "name": "Dharini Trivedi",
+    "frequentStation": "Sabarmati Railway Station",
+    "dailyRoute": {
+      "start": "Thaltej Gam",
+      "end": "Sabarmati Railway Station"
+    },
+    "travelTiming": "19:15 PM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "02c023c8-4d15-4847-a0fe-9bbf42eb3f3e",
+    "name": "Tanvi Dave",
+    "frequentStation": "Motera Stadium",
+    "dailyRoute": {
+      "start": "Sector 1 Gandhinagar",
+      "end": "Motera Stadium"
+    },
+    "travelTiming": "08:15 AM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "fdf062d5-27e8-4a97-99fa-7a4d4c28fd4f",
+    "name": "Rohan Rathod",
+    "frequentStation": "GNLU",
+    "dailyRoute": {
+      "start": "GNLU",
+      "end": "Ranip Interchange"
+    },
+    "travelTiming": "18:15 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "0ba71b9a-2923-4a93-978d-4f921fc66ff9",
+    "name": "Jhanvi Trivedi",
+    "frequentStation": "Infocity Gandhinagar",
+    "dailyRoute": {
+      "start": "Infocity Gandhinagar",
+      "end": "GNLU"
+    },
+    "travelTiming": "08:30 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "440a560e-bc2b-4f88-a0b6-713f5848bcb8",
+    "name": "Aastha Dave",
+    "frequentStation": "Mahatma Mandir",
+    "dailyRoute": {
+      "start": "Mahatma Mandir",
+      "end": "Infocity Gandhinagar"
+    },
+    "travelTiming": "08:30 AM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "63cbd122-1b63-44af-873e-6f1ef3b31181",
+    "name": "Harsh Soni",
+    "frequentStation": "Koba Circle",
+    "dailyRoute": {
+      "start": "Koba Circle",
+      "end": "Sector 1 Gandhinagar"
+    },
+    "travelTiming": "13:45 PM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "f0813990-54b4-4aa8-aa03-d0bd201d73b2",
+    "name": "Kavya Zala",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "Thaltej Gam",
+      "end": "Infocity Gandhinagar"
+    },
+    "travelTiming": "18:45 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "5e55baa4-a262-40e4-858b-39c4c2dd2f4e",
+    "name": "Pooja Gajjar",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "Thaltej Gam",
+      "end": "Koba Circle"
+    },
+    "travelTiming": "20:00 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "8578e795-2c64-4383-b896-c64903ab1153",
+    "name": "Sneha Rawal",
+    "frequentStation": "GNLU",
+    "dailyRoute": {
+      "start": "GIFT City",
+      "end": "GNLU"
+    },
+    "travelTiming": "15:30 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "71c6b37c-83b8-4f0a-b75f-1bac3d96a124",
+    "name": "Palak Modi",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "Mahatma Mandir",
+      "end": "GIFT City"
+    },
+    "travelTiming": "18:15 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "bb5df290-3899-48d2-ab5c-a229d6b62d94",
+    "name": "Diya Rawal",
+    "frequentStation": "Sector 1 Gandhinagar",
+    "dailyRoute": {
+      "start": "Sector 1 Gandhinagar",
+      "end": "Mahatma Mandir"
+    },
+    "travelTiming": "18:45 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "78cd95d2-5ff9-4af1-b1de-3bde54a03712",
+    "name": "Bhavya Zala",
+    "frequentStation": "Mahatma Mandir",
+    "dailyRoute": {
+      "start": "Mahatma Mandir",
+      "end": "Motera Stadium"
+    },
+    "travelTiming": "17:00 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "ed525975-8523-4ce3-9bb3-8eeff342d52e",
+    "name": "Hardik Joshi",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "Infocity Gandhinagar",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "17:30 PM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "bb137dad-c9d5-4a6e-872c-647ffc1f9e00",
+    "name": "Ananya Chauhan",
+    "frequentStation": "Koba Circle",
+    "dailyRoute": {
+      "start": "Koba Circle",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "09:30 AM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "e833fa89-c56d-4c0f-a819-7ca954cc7fd4",
+    "name": "Kunal Joshi",
+    "frequentStation": "Sabarmati Railway Station",
+    "dailyRoute": {
+      "start": "Sabarmati Railway Station",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "10:00 AM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "2b727bd3-541e-4d0f-87c4-fe7b0b4bb7c3",
+    "name": "Dharini Trivedi",
+    "frequentStation": "Motera Stadium",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "Koba Circle"
+    },
+    "travelTiming": "09:00 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "28039f96-b1d2-4a1f-8a44-c2e5556d8782",
+    "name": "Aarav Zala",
+    "frequentStation": "Ranip Interchange",
+    "dailyRoute": {
+      "start": "Ranip Interchange",
+      "end": "Sabarmati Railway Station"
+    },
+    "travelTiming": "10:00 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "9f403833-36a0-43ac-8ad6-927d906c51f4",
+    "name": "Aditya Thakkar",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "GIFT City",
+      "end": "Sabarmati Railway Station"
+    },
+    "travelTiming": "18:45 PM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "5a3dda92-f8d1-4430-9e84-b85b5d4d66da",
+    "name": "Rohan Gajjar",
+    "frequentStation": "Koba Circle",
+    "dailyRoute": {
+      "start": "GIFT City",
+      "end": "Koba Circle"
+    },
+    "travelTiming": "09:30 AM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "dc8e1a01-53c0-4f4f-a68e-218daab1c9a2",
+    "name": "Ananya Vyas",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "Koba Circle",
+      "end": "GIFT City"
+    },
+    "travelTiming": "08:30 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "2cbe86c5-94cf-4063-992d-edf691aa87aa",
+    "name": "Aditya Panchal",
+    "frequentStation": "Mahatma Mandir",
+    "dailyRoute": {
+      "start": "GNLU",
+      "end": "Mahatma Mandir"
+    },
+    "travelTiming": "09:30 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "a8ca4dcc-fcc4-4540-a3ed-5a442a0399bc",
+    "name": "Vidhi Desai",
+    "frequentStation": "Motera Stadium",
+    "dailyRoute": {
+      "start": "Mahatma Mandir",
+      "end": "Motera Stadium"
+    },
+    "travelTiming": "14:15 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "44aabfed-a18f-4c98-bdd3-a350bfa7e5ec",
+    "name": "Ananya Patel",
+    "frequentStation": "Infocity Gandhinagar",
+    "dailyRoute": {
+      "start": "Infocity Gandhinagar",
+      "end": "Motera Stadium"
+    },
+    "travelTiming": "09:15 AM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "592a52c9-726d-410d-8243-0b6203d59102",
+    "name": "Tanvi Dave",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "Thaltej Gam",
+      "end": "Sector 1 Gandhinagar"
+    },
+    "travelTiming": "18:00 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "9fc953e8-143f-4488-9285-a39425368f97",
+    "name": "Isha Joshi",
+    "frequentStation": "Mahatma Mandir",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "Mahatma Mandir"
+    },
+    "travelTiming": "08:45 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "b3dbca8a-9783-40a1-95d4-e3472927d9f7",
+    "name": "Nikhil Rawal",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "Koba Circle",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "09:30 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "ee1841d8-7cda-40ae-b538-4db1d589121d",
+    "name": "Palak Pandya",
+    "frequentStation": "Infocity Gandhinagar",
+    "dailyRoute": {
+      "start": "Ranip Interchange",
+      "end": "Infocity Gandhinagar"
+    },
+    "travelTiming": "21:15 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "98352fc4-a8d1-48e3-b9fc-8c4a9eca355f",
+    "name": "Rohan Chauhan",
+    "frequentStation": "GNLU",
+    "dailyRoute": {
+      "start": "GNLU",
+      "end": "Mahatma Mandir"
+    },
+    "travelTiming": "20:00 PM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "471d24ab-9426-443f-92cb-25e51952539f",
+    "name": "Siddharth Panchal",
+    "frequentStation": "Mahatma Mandir",
+    "dailyRoute": {
+      "start": "Mahatma Mandir",
+      "end": "Motera Stadium"
+    },
+    "travelTiming": "07:45 AM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "57042823-958e-4fe4-a1e8-fa1f4baa7429",
+    "name": "Rohan Patel",
+    "frequentStation": "GNLU",
+    "dailyRoute": {
+      "start": "Ranip Interchange",
+      "end": "GNLU"
+    },
+    "travelTiming": "13:45 PM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "aa9aafdf-0ddb-4167-9f33-42057f36f3a9",
+    "name": "Jay Shah",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "Sabarmati Railway Station",
+      "end": "GIFT City"
+    },
+    "travelTiming": "15:30 PM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "796d05fb-c259-4a99-88ed-3fb0246479d6",
+    "name": "Bhavya Chauhan",
+    "frequentStation": "Sabarmati Railway Station",
+    "dailyRoute": {
+      "start": "Infocity Gandhinagar",
+      "end": "Sabarmati Railway Station"
+    },
+    "travelTiming": "11:15 AM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "ff042433-1142-4399-ba3c-d491e93e737c",
+    "name": "Jhanvi Rathod",
+    "frequentStation": "Mahatma Mandir",
+    "dailyRoute": {
+      "start": "Sabarmati Railway Station",
+      "end": "Mahatma Mandir"
+    },
+    "travelTiming": "18:15 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "ba6edf56-1e51-4bc5-8641-88ec0b6f4dba",
+    "name": "Tanvi Gajjar",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "GNLU",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "07:45 AM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "b6182c67-6d73-47cf-944d-c218151d558c",
+    "name": "Nikhil Thakkar",
+    "frequentStation": "Sector 1 Gandhinagar",
+    "dailyRoute": {
+      "start": "Sabarmati Railway Station",
+      "end": "Sector 1 Gandhinagar"
+    },
+    "travelTiming": "08:45 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "9fb0d837-9ccc-4ed1-b9ab-a52ea3521eee",
+    "name": "Pooja Shah",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "Ranip Interchange",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "08:15 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "02a6242a-d8d8-4e85-bd1f-56796601696d",
+    "name": "Siddharth Rawal",
+    "frequentStation": "Motera Stadium",
+    "dailyRoute": {
+      "start": "Koba Circle",
+      "end": "Motera Stadium"
+    },
+    "travelTiming": "08:15 AM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "040478eb-4364-49c4-ae6e-2c1af1b18079",
+    "name": "Diya Desai",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "10:00 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "117b5769-3c05-4157-a7ec-16c0a2765fe8",
+    "name": "Aditya Zala",
+    "frequentStation": "Sabarmati Railway Station",
+    "dailyRoute": {
+      "start": "GIFT City",
+      "end": "Sabarmati Railway Station"
+    },
+    "travelTiming": "21:15 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "66717aa0-bca1-4d98-9fa8-c93b02a3cd36",
+    "name": "Smit Vyas",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "GIFT City",
+      "end": "Infocity Gandhinagar"
+    },
+    "travelTiming": "18:00 PM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "e7e1c0bb-9687-448d-bb2e-90c5a1543116",
+    "name": "Chirag Zala",
+    "frequentStation": "Ranip Interchange",
+    "dailyRoute": {
+      "start": "Thaltej Gam",
+      "end": "Ranip Interchange"
+    },
+    "travelTiming": "20:00 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "5245a955-5554-4fc9-af5a-400ba9bd419f",
+    "name": "Dhruv Panchal",
+    "frequentStation": "Sabarmati Railway Station",
+    "dailyRoute": {
+      "start": "Sabarmati Railway Station",
+      "end": "Koba Circle"
+    },
+    "travelTiming": "17:00 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "beee370f-231f-433d-af3b-7f75a6555641",
+    "name": "Palak Desai",
+    "frequentStation": "Ranip Interchange",
+    "dailyRoute": {
+      "start": "Thaltej Gam",
+      "end": "Ranip Interchange"
+    },
+    "travelTiming": "17:00 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "d7af387a-fe02-4951-9e82-6add73522f49",
+    "name": "Manan Joshi",
+    "frequentStation": "Sector 1 Gandhinagar",
+    "dailyRoute": {
+      "start": "Ranip Interchange",
+      "end": "Sector 1 Gandhinagar"
+    },
+    "travelTiming": "08:45 AM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "d26a264c-b17b-4f08-a451-ab25155f6336",
+    "name": "Khushi Solanki",
+    "frequentStation": "Koba Circle",
+    "dailyRoute": {
+      "start": "Mahatma Mandir",
+      "end": "Koba Circle"
+    },
+    "travelTiming": "21:15 PM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "f3308a97-f120-4d65-8702-e5dad463df16",
+    "name": "Pooja Solanki",
+    "frequentStation": "GNLU",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "GNLU"
+    },
+    "travelTiming": "17:30 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "721e2e22-7db4-4628-890b-5abc77c5a06d",
+    "name": "Aditya Gajjar",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "GIFT City",
+      "end": "Koba Circle"
+    },
+    "travelTiming": "18:00 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "b6509c71-2ec0-457d-b9ba-248c63e2d848",
+    "name": "Dhruv Rawal",
+    "frequentStation": "Motera Stadium",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "Koba Circle"
+    },
+    "travelTiming": "07:45 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "7996d706-f4ff-4eeb-9ab5-516fa8e23f9f",
+    "name": "Chirag Zala",
+    "frequentStation": "Infocity Gandhinagar",
+    "dailyRoute": {
+      "start": "Sector 1 Gandhinagar",
+      "end": "Infocity Gandhinagar"
+    },
+    "travelTiming": "14:15 PM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "67dfec26-5299-4ca6-9a1f-fe14807db105",
+    "name": "Priyanshi Bhatt",
+    "frequentStation": "Sector 1 Gandhinagar",
+    "dailyRoute": {
+      "start": "Thaltej Gam",
+      "end": "Sector 1 Gandhinagar"
+    },
+    "travelTiming": "10:00 AM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "0a286783-bfe0-4de1-8528-6bf8dca105b1",
+    "name": "Manan Vyas",
+    "frequentStation": "GNLU",
+    "dailyRoute": {
+      "start": "GNLU",
+      "end": "Ranip Interchange"
+    },
+    "travelTiming": "14:15 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "ca724a3e-8851-4045-9563-ae181f16ae56",
+    "name": "Tanvi Zala",
+    "frequentStation": "Infocity Gandhinagar",
+    "dailyRoute": {
+      "start": "Infocity Gandhinagar",
+      "end": "Ranip Interchange"
+    },
+    "travelTiming": "07:45 AM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "40f0dfeb-042c-4278-80bd-c626afcd762d",
+    "name": "Dharini Panchal",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "Ranip Interchange",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "14:15 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "8cb01eb7-88b3-414d-b358-7af51963a802",
+    "name": "Jhanvi Shah",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "Infocity Gandhinagar",
+      "end": "GIFT City"
+    },
+    "travelTiming": "10:00 AM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "36f4605d-dada-4cf5-97ad-2769fe5d07f3",
+    "name": "Manan Solanki",
+    "frequentStation": "Motera Stadium",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "Ranip Interchange"
+    },
+    "travelTiming": "08:15 AM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "d2db0194-46d4-4f88-be64-d8dc1120717e",
+    "name": "Bhavya Chauhan",
+    "frequentStation": "Koba Circle",
+    "dailyRoute": {
+      "start": "Infocity Gandhinagar",
+      "end": "Koba Circle"
+    },
+    "travelTiming": "08:15 AM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "767ad4e2-d835-4151-8ade-c19d2b90856f",
+    "name": "Palak Pandya",
+    "frequentStation": "Sabarmati Railway Station",
+    "dailyRoute": {
+      "start": "Mahatma Mandir",
+      "end": "Sabarmati Railway Station"
+    },
+    "travelTiming": "10:00 AM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "fdfdc855-2a32-4857-85ff-74a1ab426eaa",
+    "name": "Diya Modi",
+    "frequentStation": "Koba Circle",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "Koba Circle"
+    },
+    "travelTiming": "18:00 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "85d11b18-d288-465c-9f62-694ac4075252",
+    "name": "Tanvi Solanki",
+    "frequentStation": "GNLU",
+    "dailyRoute": {
+      "start": "GNLU",
+      "end": "Ranip Interchange"
+    },
+    "travelTiming": "11:15 AM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "a3cc7168-e759-4cec-b33a-fdbce4073a60",
+    "name": "Priyanshi Trivedi",
+    "frequentStation": "Mahatma Mandir",
+    "dailyRoute": {
+      "start": "GIFT City",
+      "end": "Mahatma Mandir"
+    },
+    "travelTiming": "10:00 AM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "14a86d40-3da8-42be-8575-da6a05de0ee3",
+    "name": "Vishal Modi",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "Ranip Interchange",
+      "end": "GIFT City"
+    },
+    "travelTiming": "09:30 AM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "8394dfb8-37ac-4222-85c2-d42cc001f582",
+    "name": "Dharini Joshi",
+    "frequentStation": "Ranip Interchange",
+    "dailyRoute": {
+      "start": "Ranip Interchange",
+      "end": "GNLU"
+    },
+    "travelTiming": "09:15 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "58c704a6-6d77-4a57-ac25-378a793862f8",
+    "name": "Siddharth Solanki",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "Sector 1 Gandhinagar",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "18:15 PM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "a48d6087-9223-4889-bc5a-2a8c65cb236c",
+    "name": "Harsh Modi",
+    "frequentStation": "Motera Stadium",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "13:45 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "ce1a47f1-0c3d-4cd0-a67a-048778166dd0",
+    "name": "Bhavya Rathod",
+    "frequentStation": "Mahatma Mandir",
+    "dailyRoute": {
+      "start": "Mahatma Mandir",
+      "end": "Koba Circle"
+    },
+    "travelTiming": "21:15 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "a0e32683-e1b1-4977-90d5-cf441aaffa62",
+    "name": "Priyanshi Joshi",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "Thaltej Gam",
+      "end": "GNLU"
+    },
+    "travelTiming": "08:15 AM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "1d575c2d-5283-460a-9640-4e2b0eb6bfab",
+    "name": "Hardik Thakkar",
+    "frequentStation": "Motera Stadium",
+    "dailyRoute": {
+      "start": "GNLU",
+      "end": "Motera Stadium"
+    },
+    "travelTiming": "17:00 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "f0ac4beb-cd81-4afc-b914-c6a176f665db",
+    "name": "Chirag Soni",
+    "frequentStation": "GNLU",
+    "dailyRoute": {
+      "start": "GNLU",
+      "end": "Koba Circle"
+    },
+    "travelTiming": "08:30 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "d3546299-2e2e-4174-8263-5dff88652e33",
+    "name": "Manan Chauhan",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "GIFT City"
+    },
+    "travelTiming": "14:15 PM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "21826593-92c2-4745-a7e7-162595528c78",
+    "name": "Priyanshi Rawal",
+    "frequentStation": "Sabarmati Railway Station",
+    "dailyRoute": {
+      "start": "GIFT City",
+      "end": "Sabarmati Railway Station"
+    },
+    "travelTiming": "17:30 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "7847b7c6-a833-44c8-88e3-e4201ec28531",
+    "name": "Khushi Shah",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "GIFT City",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "18:45 PM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "e1efb029-8731-4c8b-b39e-ef5a0a232a55",
+    "name": "Jhanvi Mehta",
+    "frequentStation": "Motera Stadium",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "Sector 1 Gandhinagar"
+    },
+    "travelTiming": "18:15 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "06a24d6d-41d8-445e-b316-a4e6a1e136c6",
+    "name": "Aditya Rathod",
+    "frequentStation": "Sabarmati Railway Station",
+    "dailyRoute": {
+      "start": "Mahatma Mandir",
+      "end": "Sabarmati Railway Station"
+    },
+    "travelTiming": "09:00 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "1169d64c-ea0f-41ec-8a46-9111ec9abe91",
+    "name": "Aastha Dave",
+    "frequentStation": "Infocity Gandhinagar",
+    "dailyRoute": {
+      "start": "Infocity Gandhinagar",
+      "end": "GIFT City"
+    },
+    "travelTiming": "08:15 AM",
+    "commutePurpose": "Govt Secretariat",
+    "preferredFeeder": "Metro Walkway"
+  },
+  {
+    "passengerId": "f01e299a-ef56-42d8-97bc-9ad8cf558529",
+    "name": "Sneha Modi",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "GNLU",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "13:45 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "492a167c-7c9d-4b26-8700-6f3101d3789f",
+    "name": "Kavya Thakkar",
+    "frequentStation": "Infocity Gandhinagar",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "Infocity Gandhinagar"
+    },
+    "travelTiming": "09:00 AM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "Shared Auto"
+  },
+  {
+    "passengerId": "5b83bfb1-3dc7-4db0-907a-bc69e9356b9b",
+    "name": "Ananya Solanki",
+    "frequentStation": "Koba Circle",
+    "dailyRoute": {
+      "start": "Koba Circle",
+      "end": "GNLU"
+    },
+    "travelTiming": "17:00 PM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "12af55e0-609a-4b34-9cfb-4ced1f2a99de",
+    "name": "Palak Modi",
+    "frequentStation": "Motera Stadium",
+    "dailyRoute": {
+      "start": "Motera Stadium",
+      "end": "Ranip Interchange"
+    },
+    "travelTiming": "12:30 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "d07689f2-0135-4d9b-bc52-34f85552fe63",
+    "name": "Jay Mehta",
+    "frequentStation": "Thaltej Gam",
+    "dailyRoute": {
+      "start": "GNLU",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "21:15 PM",
+    "commutePurpose": "Student / University",
+    "preferredFeeder": "E-Rickshaw"
+  },
+  {
+    "passengerId": "8111cebb-23a1-4f2d-b750-c0fc7ac456a9",
+    "name": "Hardik Gajjar",
+    "frequentStation": "GIFT City",
+    "dailyRoute": {
+      "start": "GIFT City",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "09:00 AM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "efacc5fc-1bdd-4e74-bd7d-39c70cd42d1a",
+    "name": "Hardik Thakkar",
+    "frequentStation": "Sabarmati Railway Station",
+    "dailyRoute": {
+      "start": "Sabarmati Railway Station",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "20:00 PM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "07986ad9-032e-4306-b9f1-40b5052dfe32",
+    "name": "Aarav Chauhan",
+    "frequentStation": "Sabarmati Railway Station",
+    "dailyRoute": {
+      "start": "Sabarmati Railway Station",
+      "end": "Motera Stadium"
+    },
+    "travelTiming": "08:45 AM",
+    "commutePurpose": "Commercial / Business",
+    "preferredFeeder": "EV Bus"
+  },
+  {
+    "passengerId": "fade98c9-ecc9-48f8-9015-7da286b71a8b",
+    "name": "Diya Desai",
+    "frequentStation": "Koba Circle",
+    "dailyRoute": {
+      "start": "Koba Circle",
+      "end": "Thaltej Gam"
+    },
+    "travelTiming": "15:30 PM",
+    "commutePurpose": "IT Work / Office",
+    "preferredFeeder": "EV Bus"
+  }
+]
