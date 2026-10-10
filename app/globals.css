@@ -1,25 +1,349 @@
 @import "tailwindcss";
 
+/* ============================================================
+   MetroFlow OCC — Global Design System Tokens
+   Phase 1: Master UI Shell & Reference Design System
+   ============================================================ */
+
 :root {
-  --background: #f1f3f6;
-  --foreground: #111827;
-  --primary-slate: #7d9bb3;
-  --primary-slate-dark: #64829a;
+  /* Core Palette */
+  --bg-titanium: #F0F2F5;
+  --slate-primary: #7D9BB3;
+  --slate-dark: #64829A;
+  --slate-light: #A8C0D1;
+  --slate-ultra-light: #EBF2F7;
+
+  /* Impact Colors */
+  --impact-critical: #EF4444;
+  --impact-high: #F97316;
+  --impact-moderate: #F59E0B;
+  --impact-low: #10B981;
+
+  /* Typography */
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+  --text-tertiary: #9CA3AF;
+
+  /* Surfaces */
+  --surface-white: #FFFFFF;
+  --surface-gray: #F9FAFB;
+  --border-subtle: rgba(0,0,0,0.06);
+
+  /* Shadows */
+  --shadow-card: 0 8px 32px rgba(0,0,0,0.08);
+  --shadow-elevated: 0 16px 48px rgba(0,0,0,0.12);
+  --shadow-float: 0 24px 64px rgba(0,0,0,0.14);
+  --shadow-dock: 0 8px 40px rgba(0,0,0,0.18);
+
+  /* Timing */
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ============================================================
+   Base Reset
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-primary);
+  background: var(--bg-titanium);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  height: 100dvh;
+  width: 100dvw;
 }
 
-/* Custom scrollbar hiding for smooth mobile feel */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
+/* ============================================================
+   Scrollbar Hiding (Critical for mobile-feel UX)
+   ============================================================ */
+.no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* ============================================================
+   Glass Morphism Utilities
+   ============================================================ */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-slate {
+  background: rgba(125, 155, 179, 0.15);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(125, 155, 179, 0.25);
+}
+
+/* ============================================================
+   Device Shell
+   ============================================================ */
+.device-shell {
+  background: #FFFFFF;
+  border-radius: 52px;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.08),
+    0 40px 80px rgba(0,0,0,0.20),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+  position: relative;
+  overflow: hidden;
+}
+
+.device-screen {
+  background: var(--bg-titanium);
+  border-radius: 44px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ============================================================
+   Navigation Dock
+   ============================================================ */
+.nav-dock {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.nav-tab-active {
+  background: var(--slate-primary);
+  color: white;
+}
+
+.nav-tab-inactive {
+  color: var(--text-tertiary);
+}
+
+/* ============================================================
+   Cards
+   ============================================================ */
+.card-hero {
+  background: linear-gradient(135deg, #7D9BB3 0%, #64829A 100%);
+  border-radius: 32px;
+  box-shadow: 0 16px 48px rgba(100, 130, 154, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.card-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.card-secondary {
+  background: #FFFFFF;
+  border-radius: 32px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+/* ============================================================
+   Impact Pills
+   ============================================================ */
+.pill-critical {
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pill-high {
+  background: rgba(249, 115, 22, 0.9);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pill-moderate {
+  background: rgba(245, 158, 11, 0.9);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pill-low {
+  background: rgba(16, 185, 129, 0.9);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   Circle Buttons
+   ============================================================ */
+.circle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s var(--ease-smooth), box-shadow 0.15s var(--ease-smooth);
+  flex-shrink: 0;
+}
+
+.circle-btn:active {
+  transform: scale(0.93);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+}
+
+.circle-btn-slate {
+  background: linear-gradient(135deg, #7D9BB3 0%, #64829A 100%);
+  color: white;
+  box-shadow: 0 4px 16px rgba(100, 130, 154, 0.4);
+}
+
+/* ============================================================
+   Typography Helpers
+   ============================================================ */
+.heading-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.heading-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.number-display {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* ============================================================
+   Shimmer Animation (Loading States)
+   ============================================================ */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.4) 50%,
+    rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease infinite;
+}
+
+/* ============================================================
+   Pulse Animation (Live Indicators)
+   ============================================================ */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.pulse-live {
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+/* ============================================================
+   Train Glide Animation
+   ============================================================ */
+@keyframes train-glide {
+  0% { transform: translateX(-8px); }
+  100% { transform: translateX(8px); }
+}
+
+.train-glide {
+  animation: train-glide 1.8s ease-in-out infinite alternate;
+}
+
+/* ============================================================
+   Floating Animation
+   ============================================================ */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.float-gentle {
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+/* ============================================================
+   Gradient Text
+   ============================================================ */
+.text-gradient-slate {
+  background: linear-gradient(135deg, #7D9BB3, #4A6A84);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   Dot Separator
+   ============================================================ */
+.dot-sep::before {
+  content: '•';
+  margin: 0 6px;
+  opacity: 0.4;
 }

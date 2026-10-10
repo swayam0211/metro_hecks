@@ -1,0 +1,16 @@
+{
+  "name": "MetroFlow OCC",
+  "short_name": "MetroFlow",
+  "description": "Dynamic Metro Schedule Intelligence for Ahmedabad-Gandhinagar",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F0F2F5",
+  "theme_color": "#7D9BB3",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
