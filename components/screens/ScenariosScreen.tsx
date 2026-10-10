@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import TopHeader from "@/components/TopHeader";
 import ScenarioCard from "@/components/ScenarioCard";
 import CircleButton from "@/components/CircleButton";
+import CustomEventModal from "@/components/CustomEventModal";
 import type { CityEvent, Tab } from "@/lib/types";
 import { Plus, SlidersHorizontal } from "lucide-react";
 
@@ -149,10 +151,18 @@ interface ScenariosScreenProps {
 }
 
 export default function ScenariosScreen({ onSelectEvent, onTabChange }: ScenariosScreenProps) {
-  const heroEvents = MOCK_EVENTS.filter(
+  const [events, setEvents] = useState<CityEvent[]>(MOCK_EVENTS);
+  const [category, setCategory] = useState<string>("All");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const filteredEvents = category === "All"
+    ? events
+    : events.filter((e) => e.type === category);
+
+  const heroEvents = filteredEvents.filter(
     (e) => e.impactLevel === "CRITICAL" || e.impactLevel === "HIGH"
   );
-  const secondaryEvents = MOCK_EVENTS.filter(
+  const secondaryEvents = filteredEvents.filter(
     (e) => e.impactLevel === "MODERATE" || e.impactLevel === "LOW"
   );
 
@@ -160,6 +170,21 @@ export default function ScenariosScreen({ onSelectEvent, onTabChange }: Scenario
     onSelectEvent(event);
     onTabChange("cockpit");
   }
+
+  function handleAddEvent(newEvent: CityEvent) {
+    setEvents((prev) => [newEvent, ...prev]);
+    onSelectEvent(newEvent);
+    onTabChange("cockpit");
+  }
+
+  const CATEGORIES = [
+    { id: "All", label: "All" },
+    { id: "Sports", label: "Sports 🏏" },
+    { id: "Education", label: "Exams 🎓" },
+    { id: "Weather", label: "Monsoon 🌧️" },
+    { id: "Event", label: "Summits 🏛️" },
+    { id: "Strike", label: "Strikes 🚌" },
+  ];
 
   return (
     <motion.div
@@ -170,26 +195,50 @@ export default function ScenariosScreen({ onSelectEvent, onTabChange }: Scenario
       transition={{ duration: 0.2, ease: "easeOut" }}
       className="absolute inset-0 flex flex-col"
     >
-        <TopHeader />
+      <TopHeader />
 
-        {/* Scrollable body */}
-        <div className="flex-1 overflow-y-auto no-scrollbar px-4 pb-28">
+      {/* Scrollable body */}
+      <div className="flex-1 overflow-y-auto no-scrollbar px-4 pb-28">
 
-          {/* Heading */}
-          <div className="mb-4 mt-1">
-            <p className="heading-label">Select Tomorrow&apos;s</p>
-            <h1 className="heading-title">City Scenario</h1>
-          </div>
+        {/* Heading */}
+        <div className="mb-3 mt-1">
+          <p className="heading-label">Select Tomorrow&apos;s</p>
+          <h1 className="heading-title">City Scenario</h1>
+        </div>
 
-          {/* Online/Offline Pill */}
-          <div className="flex items-center gap-1.5 mb-4">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 pulse-live" />
-            <span className="text-[11px] text-gray-500 font-medium">
-              Live Sync • Updated 2 min ago
-            </span>
-          </div>
+        {/* Online/Offline Status Pill */}
+        <div className="flex items-center gap-1.5 mb-3.5">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 pulse-live" />
+          <span className="text-[11px] text-gray-500 font-medium">
+            Live City Radar • Ahmedabad-Gandhinagar Corridor
+          </span>
+        </div>
 
-          {/* Hero cards */}
+        {/* Filter Pills */}
+        <div className="flex gap-1.5 overflow-x-auto no-scrollbar pb-3 mb-2">
+          {CATEGORIES.map((cat) => {
+            const isCatActive = category === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setCategory(cat.id)}
+                className="px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer"
+                style={{
+                  background: isCatActive
+                    ? "linear-gradient(135deg, #7D9BB3, #64829A)"
+                    : "rgba(255,255,255,0.9)",
+                  color: isCatActive ? "white" : "#6B7280",
+                  boxShadow: isCatActive ? "0 4px 12px rgba(100,130,154,0.3)" : "none",
+                }}
+              >
+                {cat.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Hero cards */}
+        {heroEvents.length > 0 && (
           <div className="flex flex-col gap-3 mb-4">
             {heroEvents.map((event, i) => (
               <ScenarioCard
@@ -201,67 +250,108 @@ export default function ScenariosScreen({ onSelectEvent, onTabChange }: Scenario
               />
             ))}
           </div>
+        )}
 
-          {/* Secondary section label */}
-          <div className="flex items-center justify-between mb-3">
-            <h2 className="text-[13px] font-bold text-gray-700">
-              Other Scenarios
-            </h2>
-            <button className="flex items-center gap-1 text-[11px] text-[#7D9BB3] font-semibold">
-              <SlidersHorizontal size={12} />
-              Filter
-            </button>
-          </div>
-
-          {/* Secondary cards */}
-          <div className="flex flex-col gap-2.5 mb-4">
-            {secondaryEvents.map((event, i) => (
-              <ScenarioCard
-                key={event.id}
-                event={event}
-                variant="secondary"
-                onSelect={handleSelect}
-                index={i}
-              />
-            ))}
-          </div>
-
-          {/* Normal Tuesday baseline card */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="card-secondary p-4 flex items-center gap-3"
-            style={{ opacity: 0.7 }}
-          >
-            <div className="w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0 bg-gray-100">
-              <span className="text-lg">📅</span>
+        {/* Secondary section label */}
+        {secondaryEvents.length > 0 && (
+          <>
+            <div className="flex items-center justify-between mb-2.5">
+              <h2 className="text-[13px] font-bold text-gray-700">
+                {category === "All" ? "Other Scenarios" : `${category} Scenarios`}
+              </h2>
+              <span className="text-[11px] text-[#7D9BB3] font-semibold">
+                {secondaryEvents.length} scenarios
+              </span>
             </div>
-            <div>
-              <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide">
-                Baseline Comparison
-              </p>
-              <p className="text-gray-600 text-[13px] font-semibold">
-                Normal Tuesday — No Events
-              </p>
-              <p className="text-gray-400 text-[11px]">
-                5,800 pax • 8-min headway • 0 injections
-              </p>
-            </div>
-          </motion.div>
-        </div>
 
-        {/* FAB — Add custom event */}
+            {/* Secondary cards */}
+            <div className="flex flex-col gap-2.5 mb-4">
+              {secondaryEvents.map((event, i) => (
+                <ScenarioCard
+                  key={event.id}
+                  event={event}
+                  variant="secondary"
+                  onSelect={handleSelect}
+                  index={i}
+                />
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* Normal Tuesday baseline card */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.6, type: "spring", stiffness: 300 }}
-          className="absolute bottom-24 right-5 z-40"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="card-secondary p-4 flex items-center gap-3 cursor-pointer hover:border-gray-300"
+          style={{ opacity: 0.85 }}
+          onClick={() => {
+            const baselineEvent: CityEvent = {
+              id: "normal-tuesday",
+              title: "Normal Tuesday (Baseline)",
+              type: "Event",
+              icon: "Train",
+              impactLevel: "LOW",
+              date: "2026-10-14",
+              timeStart: "06:00",
+              timeEnd: "22:00",
+              primaryStation: "Motera Stadium",
+              secondaryStations: ["Infocity", "GIFT City"],
+              projectedSurgePax: 0,
+              normalDayPax: 5800,
+              surgeMultiplier: 1.0,
+              injectRakeCount: 0,
+              injectTimeWindowStart: "08:00",
+              injectTimeWindowEnd: "10:00",
+              baseHeadwayMin: 8,
+              injectedHeadwayMin: 8,
+              additionalElectricityCostRs: 0,
+              projectedFareRevenueRs: 0,
+              netRevenueGainRs: 0,
+              operatorBriefEN: "Baseline operations: Standard 8-minute headway with 0 injected rakes.",
+              operatorBriefGU: "સામાન્ય દિનચર્યા: 0 વધારાની ટ્રેન.",
+              sponsorEligible: false,
+            };
+            handleSelect(baselineEvent);
+          }}
         >
-          <CircleButton variant="slate" size="lg" glow aria-label="Add Custom Event">
-            <Plus size={22} />
-          </CircleButton>
+          <div className="w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0 bg-gray-100">
+            <span className="text-lg">📅</span>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wide">
+              Baseline Comparison
+            </p>
+            <p className="text-gray-700 text-[13px] font-semibold">
+              Normal Tuesday — No Injections
+            </p>
+            <p className="text-gray-400 text-[11px]">
+              5,800 pax • 8-min headway • Baseline schedule
+            </p>
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
+
+      {/* FAB — Add custom event */}
+      <div className="absolute bottom-24 right-5 z-40">
+        <CircleButton
+          variant="slate"
+          size="lg"
+          glow
+          aria-label="Add Custom Event"
+          onClick={() => setIsModalOpen(true)}
+        >
+          <Plus size={22} />
+        </CircleButton>
+      </div>
+
+      {/* Custom Event Bottom Sheet Modal */}
+      <CustomEventModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onAddEvent={handleAddEvent}
+      />
+    </motion.div>
   );
 }

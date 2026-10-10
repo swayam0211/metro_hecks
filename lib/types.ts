@@ -2,7 +2,7 @@
 // MetroFlow OCC — Core Type Definitions
 // ============================================================
 
-export type Tab = "scenarios" | "cockpit" | "timetable" | "broadcast";
+export type Tab = "scenarios" | "cockpit" | "map" | "timetable" | "broadcast";
 
 export type ImpactLevel = "CRITICAL" | "HIGH" | "MODERATE" | "LOW";
 

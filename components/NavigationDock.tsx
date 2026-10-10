@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CalendarDays, Zap, Clock, Radio } from "lucide-react";
+import { CalendarDays, Zap, Clock, Radio, MapPin } from "lucide-react";
 import type { Tab } from "@/lib/types";
 
 interface NavigationDockProps {
@@ -16,22 +16,27 @@ const TABS: {
 }[] = [
   {
     id: "scenarios",
-    icon: <CalendarDays size={20} />,
+    icon: <CalendarDays size={18} />,
     label: "Events",
   },
   {
     id: "cockpit",
-    icon: <Zap size={20} />,
+    icon: <Zap size={18} />,
     label: "OCC",
   },
   {
+    id: "map",
+    icon: <MapPin size={18} />,
+    label: "Map",
+  },
+  {
     id: "timetable",
-    icon: <Clock size={20} />,
+    icon: <Clock size={18} />,
     label: "Board",
   },
   {
     id: "broadcast",
-    icon: <Radio size={20} />,
+    icon: <Radio size={18} />,
     label: "Broadcast",
   },
 ];

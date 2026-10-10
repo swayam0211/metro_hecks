@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Train, Zap, Clock, ChevronRight } from "lucide-react";
+import { Train, Zap, Clock, ChevronRight, Sparkles, ShieldCheck } from "lucide-react";
 import type { CityEvent } from "@/lib/types";
 
 interface TimetableScreenProps {
@@ -16,43 +17,48 @@ type TrainEntry = {
   from: string;
   to: string;
   reason?: string;
+  platform?: number;
+  depot?: string;
 };
 
 // ── Generate inline timetable ──────────────────────────────────
 function generateTimetable(event: CityEvent | null): TrainEntry[] {
   const baseTrains: TrainEntry[] = [
-    { id: "BASE-0", time: "06:30", type: "Regular", from: "Motera Stadium", to: "GIFT City" },
-    { id: "BASE-1", time: "06:38", type: "Regular", from: "GIFT City", to: "Motera Stadium" },
-    { id: "BASE-2", time: "07:00", type: "Regular", from: "Motera Stadium", to: "GIFT City" },
-    { id: "BASE-3", time: "07:08", type: "Regular", from: "GIFT City", to: "Motera Stadium" },
-    { id: "BASE-4", time: "07:30", type: "Regular", from: "Motera Stadium", to: "GIFT City" },
-    { id: "BASE-5", time: "08:00", type: "Regular", from: "Motera Stadium", to: "GIFT City" },
-    { id: "BASE-6", time: "08:08", type: "Regular", from: "GIFT City", to: "Motera Stadium" },
-    { id: "BASE-7", time: "08:30", type: "Regular", from: "Motera Stadium", to: "GIFT City" },
+    { id: "BASE-0", time: "06:30", type: "Regular", from: "Motera Stadium", to: "GIFT City", platform: 1, depot: "Apparel Park" },
+    { id: "BASE-1", time: "06:38", type: "Regular", from: "GIFT City", to: "Motera Stadium", platform: 2, depot: "Gyaspur" },
+    { id: "BASE-2", time: "07:00", type: "Regular", from: "Motera Stadium", to: "GIFT City", platform: 1, depot: "Apparel Park" },
+    { id: "BASE-3", time: "07:08", type: "Regular", from: "GIFT City", to: "Motera Stadium", platform: 2, depot: "Gyaspur" },
+    { id: "BASE-4", time: "07:30", type: "Regular", from: "Motera Stadium", to: "GIFT City", platform: 1, depot: "Apparel Park" },
+    { id: "BASE-5", time: "08:00", type: "Regular", from: "Motera Stadium", to: "GIFT City", platform: 1, depot: "Apparel Park" },
+    { id: "BASE-6", time: "08:08", type: "Regular", from: "GIFT City", to: "Motera Stadium", platform: 2, depot: "Gyaspur" },
+    { id: "BASE-7", time: "08:30", type: "Regular", from: "Motera Stadium", to: "GIFT City", platform: 1, depot: "Apparel Park" },
   ];
 
   if (!event) return baseTrains;
 
   // Build injected special trains
   const injected: TrainEntry[] = Array.from(
-    { length: Math.min(event.injectRakeCount, 3) },
+    { length: Math.min(event.injectRakeCount, 4) },
     (_, i) => ({
       id: `SPECIAL-${event.id}-${i}`,
-      time: `07:${(i + 1) * 15 < 60 ? String((i + 1) * 15).padStart(2, "0") : "45"}`,
+      time: `07:${(i + 1) * 12 < 60 ? String((i + 1) * 12).padStart(2, "0") : "48"}`,
       type: "Special" as const,
       from: event.primaryStation,
       to: "GIFT City",
-      reason: event.title,
+      reason: event.title.split(":")[0],
+      platform: 3,
+      depot: "Sabarmati Reserve",
     })
   );
 
-  // Insert injected trains after index 2 (between 07:00 and 07:08 base trains)
+  // Insert injected trains after index 2
   const withInjected = [...baseTrains];
   withInjected.splice(2, 0, ...injected);
   return withInjected;
 }
 
 export default function TimetableScreen({ selectedEvent }: TimetableScreenProps) {
+  const [viewMode, setViewMode] = useState<"occ" | "commuter">("occ");
   const trains = generateTimetable(selectedEvent);
 
   return (
@@ -64,46 +70,56 @@ export default function TimetableScreen({ selectedEvent }: TimetableScreenProps)
       transition={{ duration: 0.2, ease: "easeOut" }}
       className="absolute inset-0 flex flex-col bg-[#F0F2F5]"
     >
-        {/* Header */}
-        <div className="px-5 pt-[58px] pb-3">
-          <p className="heading-label">Live Departure</p>
-          <h1 className="heading-title">Board</h1>
-          {selectedEvent && (
-            <motion.div
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-2 flex items-center gap-1.5"
-            >
-              <Zap size={12} className="text-[#7D9BB3]" />
-              <span className="text-[11px] text-[#7D9BB3] font-semibold">
-                {selectedEvent.injectRakeCount} Special Rakes Active •{" "}
-                {selectedEvent.title.split(":")[0]}
-              </span>
-            </motion.div>
-          )}
-        </div>
-
-        {/* Train list */}
-        <div className="flex-1 overflow-y-auto no-scrollbar px-4 pb-28">
-
-          {/* OCC / Commuter View Toggle */}
-          <div className="flex gap-2 mb-4">
-            {["OCC View", "Commuter View"].map((label, i) => (
-              <button
-                key={label}
-                className="flex-1 py-2 rounded-full text-[12px] font-semibold transition-all"
-                style={{
-                  background: i === 0
-                    ? "linear-gradient(135deg, #7D9BB3, #64829A)"
-                    : "rgba(255,255,255,0.85)",
-                  color: i === 0 ? "white" : "#6B7280",
-                  boxShadow: i === 0 ? "0 4px 12px rgba(100,130,154,0.3)" : "none",
-                }}
-              >
-                {label}
-              </button>
-            ))}
+      {/* Header */}
+      <div className="px-5 pt-4 sm:pt-[54px] pb-3">
+        <p className="heading-label">
+          {viewMode === "occ" ? "OCC Control Board" : "Passenger Schedule"}
+        </p>
+        <h1 className="heading-title">
+          {viewMode === "occ" ? "Timetable Dispatch" : "Live Departures"}
+        </h1>
+        {selectedEvent && (
+          <div className="mt-2 flex items-center gap-1.5">
+            <Zap size={12} className="text-[#7D9BB3]" />
+            <span className="text-[11px] text-[#7D9BB3] font-semibold">
+              {selectedEvent.injectRakeCount} Reserve Rakes Active • {selectedEvent.title.split(":")[0]}
+            </span>
           </div>
+        )}
+      </div>
+
+      {/* Train list */}
+      <div className="flex-1 overflow-y-auto no-scrollbar px-4 pb-28">
+
+        {/* OCC / Commuter View Toggle */}
+        <div className="flex gap-2 mb-4">
+          <button
+            onClick={() => setViewMode("occ")}
+            className="flex-1 py-2 rounded-full text-[12px] font-semibold transition-all cursor-pointer"
+            style={{
+              background: viewMode === "occ"
+                ? "linear-gradient(135deg, #7D9BB3, #64829A)"
+                : "rgba(255,255,255,0.85)",
+              color: viewMode === "occ" ? "white" : "#6B7280",
+              boxShadow: viewMode === "occ" ? "0 4px 12px rgba(100,130,154,0.3)" : "none",
+            }}
+          >
+            OCC View (Admin)
+          </button>
+          <button
+            onClick={() => setViewMode("commuter")}
+            className="flex-1 py-2 rounded-full text-[12px] font-semibold transition-all cursor-pointer"
+            style={{
+              background: viewMode === "commuter"
+                ? "linear-gradient(135deg, #7D9BB3, #64829A)"
+                : "rgba(255,255,255,0.85)",
+              color: viewMode === "commuter" ? "white" : "#6B7280",
+              boxShadow: viewMode === "commuter" ? "0 4px 12px rgba(100,130,154,0.3)" : "none",
+            }}
+          >
+            Commuter View (Public)
+          </button>
+        </div>
 
           {/* Train rows */}
           <div className="flex flex-col gap-2">
@@ -156,7 +172,7 @@ export default function TimetableScreen({ selectedEvent }: TimetableScreenProps)
                     )}
                   </div>
 
-                  {/* Route */}
+                  {/* Route & Subtitle */}
                   <div className="flex-1 min-w-0">
                     <p
                       className="text-[12px] font-semibold leading-tight truncate"
@@ -164,22 +180,27 @@ export default function TimetableScreen({ selectedEvent }: TimetableScreenProps)
                     >
                       {train.from} → {train.to}
                     </p>
-                    {isSpecial && train.reason && (
-                      <p className="text-[10px] text-[#7D9BB3]/70 mt-0.5 truncate">
-                        ⚡ {train.reason}
+                    {viewMode === "occ" ? (
+                      <p className="text-[10px] text-gray-400 mt-0.5 truncate">
+                        {isSpecial ? `⚡ Rake: ${train.id} • ${train.depot}` : `Base Rake • Plat ${train.platform} • ${train.depot}`}
                       </p>
-                    )}
-                    {!isSpecial && (
-                      <p className="text-[10px] text-gray-400 mt-0.5">Regular Service</p>
+                    ) : (
+                      <p className="text-[10px] text-gray-500 mt-0.5 truncate">
+                        {isSpecial && train.reason ? `⚡ Added for ${train.reason}` : "Regular Daily Service • On Time"}
+                      </p>
                     )}
                   </div>
 
                   {/* Type badge */}
                   <div className="flex-shrink-0">
                     {isSpecial ? (
-                      <span className="pill-moderate">SPECIAL</span>
+                      <span className="pill-moderate">
+                        {viewMode === "occ" ? "DISPATCHED" : "SPECIAL ⚡"}
+                      </span>
                     ) : (
-                      <ChevronRight size={14} className="text-gray-300" />
+                      <span className="text-[10px] text-gray-400 font-semibold px-2 py-0.5 rounded-full bg-gray-100">
+                        REGULAR
+                      </span>
                     )}
                   </div>
                 </motion.div>

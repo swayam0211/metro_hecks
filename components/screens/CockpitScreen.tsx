@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Zap, ArrowLeft, Activity, TrendingUp, Train } from "lucide-react";
+import confetti from "canvas-confetti";
+import { Zap, ArrowLeft, Activity, TrendingUp, Train, CheckCircle2, Languages } from "lucide-react";
 import TopHeader from "@/components/TopHeader";
 import CircleButton from "@/components/CircleButton";
 import type { CityEvent, Tab } from "@/lib/types";
@@ -145,10 +147,27 @@ export default function CockpitScreen({ selectedEvent, onTabChange }: CockpitScr
     );
   }
 
+  const [isApproved, setIsApproved] = useState(false);
+  const [briefLang, setBriefLang] = useState<"en" | "gu">("en");
+
   const event = selectedEvent;
   const paxFormatted = event.projectedSurgePax.toLocaleString("en-IN");
   const revenueFormatted = `₹${(event.netRevenueGainRs / 1000).toFixed(0)}K`;
   const costFormatted = `₹${(event.additionalElectricityCostRs / 1000).toFixed(0)}K`;
+
+  function handleApprove() {
+    setIsApproved(true);
+    try {
+      confetti({
+        particleCount: 90,
+        spread: 60,
+        origin: { y: 0.7 },
+        colors: ["#7D9BB3", "#10B981", "#F59E0B", "#FFFFFF"],
+      });
+    } catch {
+      // safe fallback
+    }
+  }
 
   return (
     <motion.div
@@ -240,18 +259,41 @@ export default function CockpitScreen({ selectedEvent, onTabChange }: CockpitScr
             transition={{ delay: 0.3 }}
             className="card-secondary p-4 mb-4"
           >
-            <div className="flex items-center gap-2 mb-2">
-              <Activity size={14} className="text-[#7D9BB3]" />
-              <p className="text-[12px] font-bold text-gray-700">OCC Operator Brief</p>
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-2">
+                <Activity size={14} className="text-[#7D9BB3]" />
+                <p className="text-[12px] font-bold text-gray-700">OCC Operator Brief</p>
+              </div>
+              <div className="flex items-center bg-gray-100 rounded-full p-0.5">
+                <button
+                  onClick={() => setBriefLang("en")}
+                  className={`px-2 py-0.5 rounded-full text-[10px] font-bold transition-all ${
+                    briefLang === "en" ? "bg-white text-gray-800 shadow-sm" : "text-gray-400"
+                  }`}
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => setBriefLang("gu")}
+                  className={`px-2 py-0.5 rounded-full text-[10px] font-bold transition-all ${
+                    briefLang === "gu" ? "bg-white text-gray-800 shadow-sm" : "text-gray-400"
+                  }`}
+                >
+                  ગુજરાતી
+                </button>
+              </div>
             </div>
             <p className="text-gray-600 text-[12px] leading-relaxed">
-              {event.operatorBriefEN}
+              {briefLang === "en" ? event.operatorBriefEN : event.operatorBriefGU}
             </p>
-            <div className="mt-2.5 pt-2.5 border-t border-gray-100">
-              <p className="text-gray-400 text-[11px] leading-relaxed">
-                🇮🇳 {event.operatorBriefGU}
-              </p>
-            </div>
+            {isApproved && (
+              <div className="mt-2.5 pt-2 border-t border-emerald-100 flex items-center gap-1.5 text-emerald-600">
+                <CheckCircle2 size={13} />
+                <span className="text-[11px] font-bold uppercase tracking-wider">
+                  Approved & Dispatched by GMRC OCC
+                </span>
+              </div>
+            )}
           </motion.div>
 
           {/* Revenue impact */}
@@ -298,36 +340,45 @@ export default function CockpitScreen({ selectedEvent, onTabChange }: CockpitScr
           <div
             className="flex items-center justify-between px-4 py-3 rounded-[24px]"
             style={{
-              background: "rgba(255,255,255,0.92)",
+              background: "rgba(255,255,255,0.95)",
               backdropFilter: "blur(24px)",
               boxShadow: "0 8px 32px rgba(0,0,0,0.14)",
             }}
           >
             <div>
-              <p className="text-[10px] text-gray-400">Schedule Ready</p>
+              <p className="text-[10px] text-gray-400">
+                {isApproved ? "Status: Live" : "Schedule Ready"}
+              </p>
               <p className="text-gray-900 font-bold text-[13px]">
-                +{event.injectRakeCount} Special Rakes
+                {isApproved ? "✓ Active on Line" : `+${event.injectRakeCount} Special Rakes`}
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <CircleButton variant="white" size="sm" aria-label="Preview">
+              <CircleButton
+                variant="white"
+                size="sm"
+                aria-label="Preview Timetable"
+                onClick={() => onTabChange("timetable")}
+              >
                 <Train size={13} className="text-gray-600" />
               </CircleButton>
               <motion.button
                 whileTap={{ scale: 0.94 }}
-                onClick={() => onTabChange("timetable")}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-full text-white font-bold text-[12px]"
+                onClick={handleApprove}
+                className="flex items-center gap-1.5 px-4 py-2 rounded-full text-white font-bold text-[12px] cursor-pointer"
                 style={{
-                  background: "linear-gradient(135deg, #10B981, #059669)",
+                  background: isApproved
+                    ? "linear-gradient(135deg, #059669, #047857)"
+                    : "linear-gradient(135deg, #10B981, #059669)",
                   boxShadow: "0 4px 16px rgba(16,185,129,0.4)",
                 }}
               >
-                ✓ Approve
+                {isApproved ? "Approved ✓" : "✓ Approve"}
               </motion.button>
               <motion.button
                 whileTap={{ scale: 0.94 }}
                 onClick={() => onTabChange("broadcast")}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-full text-white font-bold text-[12px]"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-full text-white font-bold text-[12px] cursor-pointer"
                 style={{
                   background: "linear-gradient(135deg, #7D9BB3, #64829A)",
                   boxShadow: "0 4px 16px rgba(100,130,154,0.4)",
